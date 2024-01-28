@@ -5,13 +5,9 @@ type incrtDecrtObj = {
   type: string
   payload: number
 };
-type resetObj = {
-  type: string
-}
 type stateObj = {
   count: number
 }
-// type bothTypeObjs = incrtDecrtObj | resetObj
 
 const callReducer = (state: stateObj, action: incrtDecrtObj ) => {
   switch(action.type) {
