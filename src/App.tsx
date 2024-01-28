@@ -7,6 +7,8 @@ import { PersonList } from './components/PersonList';
 import { StatusCom } from './components/StatusCom';
 import { UserComp } from './components/user';
 import { ReducerComp } from './components/ReducerComp';
+import { ContextProvider } from './context/ContextProvider';
+import { MainCom } from './context/MainCom';
 
 function App() {
 
@@ -45,6 +47,8 @@ function App() {
 
   return (
     <div className="App">
+      <ContextProvider>
+        <MainCom />
       <Greet 
         message='This is typescript leason'
         count={40}
@@ -62,10 +66,10 @@ function App() {
       <PersonList
         useList={personList}
       />
-        {/* Display the types of components */}
       </StatusCom>
       <UserComp />
       <ReducerComp />
+      </ContextProvider>
     </div>
   );
 }
