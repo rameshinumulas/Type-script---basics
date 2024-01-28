@@ -11,7 +11,7 @@ export const MainCom = () => {
   }
   const handleLogout = () => {
     mainStyContext.setUser({
-      name: '',
+      name: 'user logout',
       email: ''
     })
   }
