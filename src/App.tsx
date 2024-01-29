@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Greet } from './components/Greet';
@@ -9,6 +9,8 @@ import { UserComp } from './components/user';
 import { ReducerComp } from './components/ReducerComp';
 import { ContextProvider } from './context/ContextProvider';
 import { MainCom } from './context/MainCom';
+import { CustomButton } from './wrapHtmlElements/CustomButton';
+import { CusomtInput } from './wrapHtmlElements/CustomInput';
 
 function App() {
 
@@ -45,6 +47,10 @@ function App() {
     console.log(e.target.value)
   }
 
+  const handleInputVal = (e:React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value)
+  }
+
   return (
     <div className="App">
       <ContextProvider>
@@ -69,6 +75,10 @@ function App() {
       </StatusCom>
       <UserComp />
       <ReducerComp />
+      <CustomButton colorVariant='primary' onClick={(value: React.MouseEvent<HTMLButtonElement>) => console.log(value)}>
+        Primary submmit
+      </CustomButton>
+      <CusomtInput onChange={handleInputVal} />
       </ContextProvider>
     </div>
   );
